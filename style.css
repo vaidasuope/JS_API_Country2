@@ -1,0 +1,12 @@
+body {
+    background-color: honeydew;
+}
+img {
+    width: 290px;
+    height: 200px;
+}
+#vieta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
