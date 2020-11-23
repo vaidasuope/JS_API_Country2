@@ -32,29 +32,34 @@ async function duomenuFunkcija() {
             const mygtukas=document.getElementById("button");
             mygtukas.addEventListener("click", pradeti);
 
+
             function pradeti (){
                 const vieta = document.getElementById("vieta");
-                const vestiPav = document.getElementById("ieskoti"); //reset idet reikes dar
+                const vestiPav = document.getElementById("ieskoti");
+                const vieta2 = document.getElementById("vieta2")
                 if (vieta.style.display="flex"){
                     vieta.style.display="none";
                     mygtukas.value="Search";
                     vestiPav.style.display="flex";
                     const saliesPav = vestiPav.value;
-                    if (saliesPav == saliesVardas.name){
-                        console.log(saliesPav);
-                        console.log(saliesVardas.flag);
-                        foto.src = saliesVardas.flag;
-                        foto.innerHTML = foto;
-                        pavadinimas.innerHTML = saliesVardas.name;
-                        pavadinimas.style.textTransform = "uppercase";
-
-                        vieta2.appendChild(saliesVieta);
-                        saliesVieta.appendChild(foto);
-                        saliesVieta.appendChild(pavadinimas);
+                    if ((saliesPav == saliesVardas.name) && (vieta2.style.display="none")){
+                        vieta2.style.display="flex";
+                        const foto1 = document.getElementById("photo").src = saliesVardas.flag;
+                        const pavadinimas1 = document.getElementById("pavadinimas").innerHTML=saliesVardas.name;
+                        vestiPav.value="";
                     }
                 }
+            }
+            const mygtukas2=document.getElementById("button1");
+            mygtukas2.addEventListener("click", grizti);
+
+            function grizti(){
+                if ((vieta.style.display="none") && (vieta2.style.display="flex")){
+                    vieta.style.display="flex";
+                    vieta2.style.display="none";
+                }
                 else {
-                    alert("Not possible to load the data!")
+                    alert("Error");
                 }
             }
 
