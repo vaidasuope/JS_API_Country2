@@ -10,8 +10,8 @@ async function duomenuFunkcija() {
         const saliusDuomenys = await gautiDuomenis.json();
 
         saliusDuomenys.forEach(saliesVardas => {
-            console.log(saliesVardas.name);
-            console.log(saliesVardas.flag);
+            // console.log(saliesVardas.name);
+            // console.log(saliesVardas.flag);
 
             const vieta = document.getElementById("vieta");
             const vieta2 = document.getElementById("vieta2");
@@ -33,20 +33,20 @@ async function duomenuFunkcija() {
             mygtukas.addEventListener("click", pradeti);
 
 
-            function pradeti (){
+            function pradeti() {
                 const vieta = document.getElementById("vieta");
                 const vestiPav = document.getElementById("ieskoti");
                 const vieta2 = document.getElementById("vieta2")
-                if (vieta.style.display="flex"){
-                    vieta.style.display="none";
-                    mygtukas.value="Search";
-                    vestiPav.style.display="flex";
+                if (vieta.style.display = "flex") {
+                    vieta.style.display = "none";
+                    mygtukas.value = "Search";
+                    vestiPav.style.display = "flex";
                     const saliesPav = vestiPav.value;
-                    if ((saliesPav == saliesVardas.name) && (vieta2.style.display="none")){
-                        vieta2.style.display="flex";
+                    if ((saliesPav == saliesVardas.name) && (vieta2.style.display = "none")) {
+                        vieta2.style.display = "flex";
                         const foto1 = document.getElementById("photo").src = saliesVardas.flag;
-                        const pavadinimas1 = document.getElementById("pavadinimas").innerHTML=saliesVardas.name;
-                        vestiPav.value="";
+                        const pavadinimas1 = document.getElementById("pavadinimas").innerHTML = saliesVardas.name;
+                        vestiPav.value = "";
                     }
                 }
             }
@@ -59,7 +59,7 @@ async function duomenuFunkcija() {
                     vieta2.style.display="none";
                 }
                 else {
-                    alert("Error");
+                    alert("Error. Please ty again!");
                 }
             }
 
@@ -70,29 +70,7 @@ async function duomenuFunkcija() {
         console.log("Neužkrauna duomenų!");
     }
 }
-
-// const mygtukas=document.getElementById("button");
-// mygtukas.addEventListener("click", pradeti);
-//
-// function pradeti (){
-//     const vieta = document.getElementById("vieta");
-//     const vestiPav = document.getElementById("ieskoti");
-//     if (vieta.style.display="flex"){
-//         vieta.style.display="none";
-//         mygtukas.value="Search";
-//         vestiPav.style.display="flex";
-//     }
-//     else {
-//         alert("Nepavyko užkrauti!")
-//     }
-// }
-
-
-
 console.log("pabaiga");
-
-
-
 
 
 
